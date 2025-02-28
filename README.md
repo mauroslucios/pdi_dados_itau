@@ -124,3 +124,80 @@ Remember to adapt this plan to your own pace, learning style, and specific goals
 
 [^10]: https://pplx-res.cloudinary.com/image/upload/v1740768783/user_uploads/kLoqsfsiUnoymws/WhatsApp-Image-2025-02-28-at-15.46.50.jpg
 
+
+
+
+# Arquivos ".ipynb" para este plano de estudos
+
+Here's a list of `.ipynb` files named according to the 6-month Spark learning plan I previously generated, based on the skills listed from the OCRed image. This assumes each topic in the table corresponds to a Jupyter Notebook. I am creating a list of .ipynb files and not actual files. I cannot access the local file system to write these files.
+
+**Month 1: Spark Fundamentals**
+
+1. `01_Introduction_to_Spark.ipynb`
+2. `02_Spark_Architecture.ipynb`
+3. `03_RDDs_and_DataFrames.ipynb`
+4. `04_Transformations_and_Actions.ipynb`
+
+**Month 2: Spark Transformations and Performance**
+
+5. `05_Narrow_and_Wide_Transformations.ipynb`
+6. `06_Execution_Plans_Logical_and_Physical.ipynb`
+7. `07_Shuffle_Internals_and_Tuning.ipynb`
+8. `08_Dataframe_Repartitioning.ipynb`
+
+**Month 3: Spark SQL and Data Quality**
+
+9. `09_Spark_SQL_Basics.ipynb`
+10. `10_Data_Quality_Dimensions.ipynb`
+11. `11_Glue_Data_Quality.ipynb`
+12. `12_Unit_Testing_for_Spark_Jobs.ipynb`
+
+**Month 4: Spark Streaming and AWS Integration**
+
+13. `13_Spark_Streaming_Introduction.ipynb`
+14. `14_Kinesis_Integration.ipynb`
+15. `15_Realtime_Transformation.ipynb`
+16. `16_Data_Persistence_Viz.ipynb`
+
+**Month 5: Data Engineering Patterns and Orchestration**
+
+17. `17_Intro_to_Airflow.ipynb`
+18. `18_Orquestration_Implementation.ipynb`
+19. `19_AWS_MWAA.ipynb`
+20. `20_Advance_AWS.ipynb`
+
+**Month 6: Review, Projects, and Certification Prep**
+
+21. `21_Spark_Fundamentals_Review.ipynb`
+22. `22_Project_Data_Analysis_SQL.ipynb`
+23. `23_Project_RealTime_Analytics.ipynb`
+24. `24_Certification_Prep_Final_Project.ipynb`
+
+To create these files, you can use your terminal/command line:
+`touch <file_name>.ipynb`
+
+or simply create new files directly in the jupyter notebook.
+Remember these will be empty and you'll have to copy and paste the code from the above created roadmap.
+
+<div style="text-align: center">⁂</div>
+
+[^1]: https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/42378638/31469c09-ebbb-40b9-84e3-96f0081ff274/main.tf
+
+[^2]: https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/42378638/e642a38d-eca6-477b-876a-6268bfe0bbc0/variables.tf
+
+[^3]: https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/42378638/e1ad6b46-726b-46f9-8157-e604f898f290/ec2.tf
+
+[^4]: https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/42378638/69df6957-9378-4e7f-8278-71c4b2247abc/eks.tf
+
+[^5]: https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/42378638/a4a80d62-d416-46a7-b9e9-3da5a95a93b5/emr.tf
+
+[^6]: https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/42378638/092ed149-26fb-4cfa-9fa0-00a58fa8453c/redshift.tf
+
+[^7]: https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/42378638/155389fa-af42-4f29-a3de-c52ced2511a8/s3.tf
+
+[^8]: https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/42378638/eb473a66-87c9-42a9-8242-67436cb9b25f/Zikavirus.csv
+
+[^9]: https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/42378638/076a4d61-bc6b-4e6b-a1a6-4adb1b3c01e3/FOLKS_Mapa_Transformacao_v2024.pdf
+
+[^10]: https://pplx-res.cloudinary.com/image/upload/v1740768783/user_uploads/kLoqsfsiUnoymws/WhatsApp-Image-2025-02-28-at-15.46.50.jpg
+
