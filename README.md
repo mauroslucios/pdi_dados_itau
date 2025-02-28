@@ -4,9 +4,10 @@
 
 ---
 
-# Crie um plano de aula para 6 meses do  conteudo de spark da planilha
+# pdi_dados_itau
 
-Okay, here's a 6-month Spark learning plan based on the identified skills, broken down month by month, with a focus on both theoretical understanding and practical application. This plan assumes you have a basic understanding of programming concepts and data structures.
+
+Here's a 6-month Spark learning plan based on the identified skills, broken down month by month, with a focus on both theoretical understanding and practical application. This plan assumes you have a basic understanding of programming concepts and data structures.
 
 **Overall Goals:**
 
@@ -123,4 +124,3 @@ Remember to adapt this plan to your own pace, learning style, and specific goals
 
 [^10]: https://pplx-res.cloudinary.com/image/upload/v1740768783/user_uploads/kLoqsfsiUnoymws/WhatsApp-Image-2025-02-28-at-15.46.50.jpg
 
-# pdi_dados_itau
