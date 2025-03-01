@@ -1,7 +1,5 @@
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
 
-# 
-
 ---
 
 # pdi_dados_itau
@@ -200,4 +198,5 @@ Remember these will be empty and you'll have to copy and paste the code from the
 [^9]: https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/42378638/076a4d61-bc6b-4e6b-a1a6-4adb1b3c01e3/FOLKS_Mapa_Transformacao_v2024.pdf
 
 [^10]: https://pplx-res.cloudinary.com/image/upload/v1740768783/user_uploads/kLoqsfsiUnoymws/WhatsApp-Image-2025-02-28-at-15.46.50.jpg
+
 
