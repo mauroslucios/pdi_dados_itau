@@ -18,7 +18,7 @@ Este repositório contém a infraestrutura como código (IaC) utilizando **Terra
 │── README.md      # (Opcional) Documentação do projeto
 ```
 
-## 🌜 Descrição dos Arquivos
+## 📜 Descrição dos Arquivos
 
 - \`\` → Declara os recursos principais da AWS (exemplo: EC2, S3, RDS).
 - \`\` → Configura o provedor da AWS (região, credenciais, etc.).
