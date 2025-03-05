@@ -12,7 +12,7 @@ provider "aws" {
   region = "us-west-1"
   default_tags {
     tags = {
-      owner      = "mauroslucioss"
+      owner      = "mauroslucios"
       managed-by = "terraform"
     }
   }
