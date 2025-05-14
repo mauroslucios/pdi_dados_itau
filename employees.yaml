@@ -1,0 +1,521 @@
+openapi: 3.0.4
+info:
+  title: Employee and Departments API
+  description: API for managing employees and departments
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api/
+    description: Servidor de Produção
+  - url: http://localhost:8081/api/
+    description: Servidor de Teste
+tags:
+  - name: Employees
+    description: Operações relacionadas a funcionários
+  - name: Departments
+    description: Operações relacionadas a departamentos
+
+paths:
+  /employees:
+    get:
+      summary: List all employees
+      description: Retorna uma lista de todos os funcionarrios.
+      tags:
+        - Employees
+      parameters:
+        - name: idFuncionario
+          in: query
+          description: ID do funcionário
+          required: false
+          schema:
+            type: integer
+            format: int64
+            example: "123456789"
+        - name: nomeFuncionario
+          in: query
+          description: Nome do funcionário
+          required: true
+          schema:
+            type: string
+            example: "João Silva"
+        - name: dataNascimento
+          in: query
+          description: Data de nascimento do funcionário
+          required: true
+          schema:
+            type: string
+            format: date
+            example: "1969-01-02"
+        - name: emailFuncionario
+          in: query
+          description: Email do funcionário
+          required: true
+          schema:
+            type: string
+            example: "BbB0s@example.com"
+        - name: TipoFuncionario
+          in: query
+          description: Tipo de funcionário
+          required: true
+          schema:
+            type: string
+            example: "CLT"
+        - name: dataAdmissao
+          in: query
+          description: Data de admissão do funcionário
+          required: true
+          schema:
+            type: string
+            format: date
+            example: "2023-10-01"
+        - name: IdDepartamento
+          in: query
+          description: ID do departamento
+          required: true
+          schema:
+            type: integer
+            format: int64
+            example: "123456789"
+      responses:
+        '200':
+          description: Lista de funcionários retornada com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeList'
+        '400':
+          description: Requisição inválida.
+        '500':
+          description: Erro interno do servidor.
+    post:
+      summary: Add a new employee
+      description: Adiciona um novo funcionário.
+      tags:
+        - Employees
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '201':
+          description: Funcionário adicionado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+        '400':
+          description: Requisição inválida.
+        '500':
+          description: Erro interno do servidor.
+  /employees/{idFuncionario}:
+    get:
+      summary: Get an employee by Id
+      description: Retorna um funcionário por ID.
+      tags:
+        - Employees
+      parameters:
+        - name: idFuncionario
+          in: path
+          required: true
+          description: ID do funcionário
+          schema:
+            type: integer
+            format: int64
+            example: "123456789"
+      responses:
+        '200':
+          description: Funcionário retornado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+        '404':
+          description: Funcionário não encontrado.
+        '500':
+          description: Erro interno do servidor.
+    put:
+      summary: Update an employee
+      description: Atualiza um funcionário existente.
+      tags:
+        - Employees
+      parameters:
+        - name: idFuncionario
+          in: path
+          required: true
+          description: ID do funcionário
+          schema:
+            type: integer
+            format: int64
+            example: "123456789"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Funcionário atualizado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+        '400':
+          description: Requisição inválida.
+        '404':
+          description: Funcionário não encontrado.
+        '500':
+          description: Erro interno do servidor.
+    patch:
+      summary: Partially update an employee
+      description: Atualiza parcialmente um funcionário existente.
+      tags:
+        - Employees
+      parameters:
+        - name: idFuncionario
+          in: path
+          required: true
+          description: ID do funcionário
+          schema:
+            type: integer
+            format: int64
+            example: "123456789"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Funcionário atualizado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+        '400':
+          description: Requisição inválida.
+        '404':
+          description: Funcionário não encontrado.
+        '500':
+          description: Erro interno do servidor.
+    delete:
+      summary: Delete an employee
+      description: Remove um funcionário existente.
+      tags:
+        - Employees
+      parameters:
+        - name: idFuncionario
+          in: path
+          required: true
+          description: ID do funcionário
+          schema:
+            type: integer
+            format: int64
+            example: "123456789"
+      responses:
+        '204':
+          description: Funcionário removido com sucesso.
+        '404':
+          description: Funcionário não encontrado.
+        '500':
+          description: Erro interno do servidor.  
+  /departments:
+    get:
+      summary: List all departments
+      description: Retorna uma lista de todos os departamentos.
+      tags:
+        - Departments
+      parameters:
+        - name: idDepartamento
+          in: query
+          description: ID do departamento
+          required: false
+          schema:
+            type: integer
+            format: int64
+            example: "123456789"
+        - name: nomeDepartamento
+          in: query
+          description: Nome do departamento
+          required: false
+          schema:
+            type: string
+            example: "Recursos Humanos"
+        - name: dataCriacao
+          in: query
+          description: Data de criação do departamento
+          required: false
+          schema:
+            type: string
+            format: date
+            example: "2023-10-01"
+        - name: idGerente
+          in: query
+          description: ID do gerente do departamento
+          required: false
+          schema:
+            type: integer
+            format: int64
+            example: "123456789"
+      responses:
+        '200':
+          description: Lista de departamentos retornada com sucesso.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DepartmentList'
+        '400':
+          description: Requisição inválida.
+        '500':
+          description: Erro interno do servidor.
+
+    post:
+      summary: Add a new departments
+      description: Adiciona um novo departamento.
+      tags:
+        - Departments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Department'
+      responses:
+        '201':
+          description: Departamento adicionado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Department'
+        '400':
+          description: Requisição inválida.
+        '500':
+          description: Erro interno do servidor.
+  /departments/{idDepartamento}:
+    get:
+      summary: Get a department by Id
+      description: Retorna um departamento por ID.
+      tags:
+        - Departments
+      parameters:
+        - name: idDepartamento
+          in: path
+          required: true
+          description: ID do departamento
+          schema:
+            type: integer
+            format: int64
+            example: "123456789"
+      responses:
+        '200':
+          description: Departamento retornado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Department'
+        '404':
+          description: Departamento não encontrado.
+        '500':
+          description: Erro interno do servidor.
+    put:
+      summary: Update a department
+      description: Atualiza um departamento existente.
+      tags:
+        - Departments
+      parameters:
+        - name: idDepartamento
+          in: path
+          required: true
+          description: ID do departamento
+          schema:
+            type: integer
+            format: int64
+            example: "123456789"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Department'
+      responses:
+        '200':
+          description: Departamento atualizado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Department'
+        '400':
+          description: Requisição inválida.
+        '404':
+          description: Departamento não encontrado.
+        '500':
+          description: Erro interno do servidor.
+    patch:
+      summary: Partially update a department
+      description: Atualiza parcialmente um departamento existente.
+      tags:
+        - Departments
+      parameters:
+        - name: idDepartamento
+          in: path
+          required: true
+          description: ID do departamento
+          schema:
+            type: integer
+            format: int64
+            example: "123456789"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Department'
+      responses:
+        '200':
+          description: Departamento atualizado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Department'
+        '400':
+          description: Requisição inválida.
+        '404':
+          description: Departamento não encontrado.
+        '500':
+          description: Erro interno
+    delete:
+      summary: Delete a department
+      description: Remove um departamento existente.
+      tags:
+        - Departments
+      parameters:
+        - name: idDepartamento
+          in: path
+          required: true
+          description: ID do departamento
+          schema:
+            type: integer
+            format: int64
+            example: "123456789"
+      responses:
+        '204':
+          description: Departamento removido com sucesso.
+        '404':
+          description: Departamento não encontrado.
+        '500':
+          description: Erro interno do servidor.
+components:
+  schemas:
+    Employee:
+      type: object
+      properties:
+        idFuncionario:
+          type: integer
+          format: int64
+          description: ID do funcionário
+          example: "123456789"
+        nomeFuncionario:
+          type: string
+          description: Nome do funcionário
+          example: "João Silva"
+        dataNascimento:
+          type: string
+          description: Data de nascimento do funcionário
+          example: "1969-01-02"
+        emailFuncionario:
+          type: string
+          description: Email do funcionário
+          example: "BbB0s@example.com"
+        tipoFuncionario:
+          type: string
+          description: Tipo de funcionário
+          example: "CLT"
+        dataAdmissao:
+          type: string
+          format: date
+          description: Data de admissão do funcionário
+          example: "2023-10-01"
+    EmployeeList:
+      type: object
+      properties:
+        idFuncionario:
+          type: integer
+          format: int64
+          description: ID do funcionário
+          example: "123456789"
+        nomeFuncionario:
+          type: string
+          description: Nome do funcionário
+          example: "João Silva"
+        dataNascimento:
+          type: string
+          format: date
+          description: Data de nascimento do funcionário
+          example: "1969-01-02"
+        emailFuncionario:
+          type: string
+          description: Email do funcionário
+          example: "BbB0s@example.com"
+        tipoFuncionario:
+          type: string
+          description: Tipo de funcionário
+          example: "CLT"
+        dataAdmissao:
+          type: string
+          format: date
+    Department:
+      type: object
+      properties:
+        idDepartamento:
+          type: integer
+          format: int64
+          description: ID do departamento
+          example: "123456789"
+        nomeDepartamento:
+          type: string
+          description: Nome do departamento
+          example: "Recursos Humanos"
+        dataCriacao:
+          type: string
+          format: date
+          description: Data de criação do departamento
+          example: "2023-10-01"
+        idGerente:
+          type: integer
+          format: int64
+          description: ID do gerente do departamento
+          example: "123456789"
+    DepartmentList:
+      type: object
+      properties:
+        idDepartamento:
+          type: integer
+          format: int64
+          description: ID do departamento
+          example: "123456789"
+        nomeDepartamento:
+          type: string
+          description: Nome do departamento
+          example: "Recursos Humanos"
+        dataCriacao:
+          type: string
+          format: date
+          description: Data de criação do departamento
+          example: "2023-10-01"
+        idGerente:
+          type: integer
+          format: int64
+          description: ID do gerente do departamento
+          example: "123456789"
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Token JWT para autenticação
+security:
+  - bearerAuth: []
